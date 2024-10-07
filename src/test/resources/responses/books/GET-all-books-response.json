@@ -1,0 +1,54 @@
+{
+  "content": [
+    {
+      "id": "iWA-DwAAQBAJ",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "isbn": "9781471173943",
+      "publisher": "Simon and Schuster",
+      "publishedDate": "2018-04-10",
+      "description": "A classic, perhaps the supreme American novel",
+      "reviews": [
+        {
+          "id": 1,
+          "bookId": "iWA-DwAAQBAJ",
+          "reviewer": {
+            "id": 1,
+            "firstName": "John",
+            "lastName": "Doe"
+          },
+          "review": "An impressive work of art.",
+          "reviewDate": "2024-03-28T00:00:00Z"
+        },
+        {
+          "id": 2,
+          "bookId": "iWA-DwAAQBAJ",
+          "reviewer": {
+            "id": 2,
+            "firstName": "Jane",
+            "lastName": "Smith"
+          },
+          "review": "A must-read.",
+          "reviewDate": "2024-02-15T00:00:00Z"
+        }
+      ]
+    }
+  ],
+  "pageable": {
+    "pageNumber": 0,
+    "pageSize": 10,
+    "sort": [],
+    "offset": 0,
+    "unpaged": false,
+    "paged": true
+  },
+  "last": true,
+  "totalElements": 1,
+  "totalPages": 1,
+  "size": 10,
+  "number": 0,
+  "sort": [],
+  "first": true,
+  "numberOfElements": 1,
+  "empty": false
+}

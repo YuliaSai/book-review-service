@@ -1,0 +1,103 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 1,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "iWA-DwAAQBAJ",
+      "etag": "rMXEwfd9+PI",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/iWA-DwAAQBAJ",
+      "volumeInfo": {
+        "title": "The Great Gatsby",
+        "authors": [
+          "F. Scott Fitzgerald"
+        ],
+        "publisher": "Simon and Schuster",
+        "publishedDate": "2018-04-10",
+        "description": "A classic, perhaps the supreme American novel",
+
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781471173943"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1471173941"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": false
+        },
+        "pageCount": 182,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.7.8.0.preview.2",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=iWA-DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=iWA-DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.pl/books?id=iWA-DwAAQBAJ&pg=PT149&dq=intitle:The+Great+Gatsby+inauthor:F.+Scott+Fitzgerald+isbn:9781471173943+inpublisher:Simon+and+Schuster&hl=&cd=1&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=iWA-DwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=iWA-DwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 47.9,
+          "currencyCode": "PLN"
+        },
+        "retailPrice": {
+          "amount": 47.9,
+          "currencyCode": "PLN"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=iWA-DwAAQBAJ&rdid=book-iWA-DwAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 47900000,
+              "currencyCode": "PLN"
+            },
+            "retailPrice": {
+              "amountInMicros": 47900000,
+              "currencyCode": "PLN"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.pl/books/download/The_Great_Gatsby-sample-epub.acsm?id=iWA-DwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=iWA-DwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "F. <b>Scott Fitzgerald</b>. “You weren&#39;t so nice to me last night.” “How could it have mattered then?” Silence for a moment. Then: “However—I want to see you.” “I want to see you, too.” “Suppose I don&#39;t go to Southampton, and come into town&nbsp;..."
+      }
+    }
+  ]
+}

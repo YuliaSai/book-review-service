@@ -1,0 +1,107 @@
+{
+  "kind": "books#volume",
+  "id": "iWA-DwAAQBAJ",
+  "etag": "tiwMLJHcFls",
+  "selfLink": "https://www.googleapis.com/books/v1/volumes/iWA-DwAAQBAJ",
+  "volumeInfo": {
+    "title": "The Great Gatsby",
+    "authors": [
+      "F. Scott Fitzgerald"
+    ],
+    "publisher": "Simon and Schuster",
+    "publishedDate": "2018-04-10",
+    "description": "<b>**The twentieth-century masterpiece, the authoritative new edition**</b><br>  With a new foreword by Jesmyn Ward, author of the Women's Prize-shortlisted <i>Sing, Unburied, Sing</i><br><br><i>‘There was music from my neighbour’s house through the summer nights. In his blue gardens men and girls came and went like moths among the whisperings and the champagne and the stars.’</i><br>  <br> Enigmatic, intriguing and fabulously wealthy, <b>Jay Gatsby</b> throws lavish parties at his West Egg mansion to impress <b>Daisy Buchanan</b>, the object of his obsession, now married to bullish <b>Tom Buchanan</b>. Over a Long Island summer, his neighbour <b>Nick Carraway</b>, a writer and a cousin to Daisy, looks on as <b>Gatsby </b>and <b>Daisy</b>’s affair deepens. Tragedy looms in F. Scott Fitzgerald’s masterpiece third novel, frequently named among the best novels of the twentieth century.<br>  <br><b>Praise for <i>The Great Gatsby</i>:</b><br> ‘A classic, perhaps the <b>supreme American novel</b>’ <b><i>Sunday Times</i></b><br> ‘More than an American classic; it’s become a <b>defining document of the national psyche</b>, a creation myth, the <b>Rosetta Stone of the American dream</b>’ <b><i>Guardian</i></b><br> ‘F. Scott Fitzgerald was better than he knew, for in fact and in the literary sense <b>he invented a generation</b>’ <b><i>New York Times</i></b><br> ‘An unquiet <b>masterpiece</b> whose mystery never fails to <b>exert its power</b>’ <b>Robert McCrum, <i>Observer</i>, ‘The 100 Best Novels in English’</b><br>  <br>  ",
+    "industryIdentifiers": [
+      {
+        "type": "ISBN_10",
+        "identifier": "1471173941"
+      },
+      {
+        "type": "ISBN_13",
+        "identifier": "9781471173943"
+      }
+    ],
+    "readingModes": {
+      "text": true,
+      "image": false
+    },
+    "pageCount": 192,
+    "printedPageCount": 182,
+    "printType": "BOOK",
+    "categories": [
+      "Fiction / General",
+      "Fiction / Classics"
+    ],
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": true,
+    "contentVersion": "1.7.8.0.preview.2",
+    "panelizationSummary": {
+      "containsEpubBubbles": false,
+      "containsImageBubbles": false
+    },
+    "imageLinks": {
+      "smallThumbnail": "http://books.google.com/books/publisher/content?id=iWA-DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE73HBSLNimirL1KXY9bLFuuS1N3XIWgIuOjhfPR5RO8_tygi3W-irPj521ttl-Ey87dc4Oo8h4Rih5rQoh66T6mhn5CrDbglFi4Hq2n2IGUqve2tFGbSdES7rTc1hZqZLS2NI2_d&source=gbs_api",
+      "thumbnail": "http://books.google.com/books/publisher/content?id=iWA-DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE7294C-HEZ1PCZ_SpRLG5e-rxmsQT0n_TMUC9ckdWKD04gX3iOVYO-mMF0YRGkPqkUOvSE_RMZ1Yx1UNEm5IHbA2zhdEGrhb1RRNLe0NTbRw_mE5x0DNaORgRfROvOlPg63CIXMf&source=gbs_api",
+      "small": "http://books.google.com/books/publisher/content?id=iWA-DwAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE70wtHKvOPmhq63jmsUAVGbPq5-VOIwO6uqDDf0dXbimVnyorSqsIOOwZXPN8KpR6E2ffaGgbvgNnXyHYTBl3kQtn5tWFBtZ5PGjy9soIWfdMAgoMRXQh12wAt4jQAXKpW6WISBh&source=gbs_api",
+      "medium": "http://books.google.com/books/publisher/content?id=iWA-DwAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE70uR7-h8ZS8TfdoTouNa-nmKJwn7y8X-aaIReQoGHlgCs0YBy-Xs9WbhZXEk8PF6OOCoIxCTTIhGXf1NIE4bKTx4zuOUxZ0HniQAzA1gnnsp7LYwqZ0Cjx_kO0BVEC_isDZ6QGS&source=gbs_api",
+      "large": "http://books.google.com/books/publisher/content?id=iWA-DwAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE73bUJ_Lbh-Vr5Zg31icgfR-HhiqMWktbB2wQhg_QfEFLpzvTnDwfofc289TLP9OA44eLxYetfbFdXuRyx5ROBSTxuqykiMju8KxPA9sKuM_ZCzgk-KcD-QIU3eBB4Xn1TmVsF17&source=gbs_api",
+      "extraLarge": "http://books.google.com/books/publisher/content?id=iWA-DwAAQBAJ&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE70cUoVS9zmEmxoc3ntCWMZ7AZ-QQy0owqU26_X5KHGDzEL49uwe2_2-cZd1gfjOYpwLYGvWyF_NegFS8VgaewpceVT8m63ggcfRzOPaXvMY5cMT3n2qX65uusf4rPDM0orh-wWn&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.pl/books?id=iWA-DwAAQBAJ&hl=&source=gbs_api",
+    "infoLink": "https://play.google.com/store/books/details?id=iWA-DwAAQBAJ&source=gbs_api",
+    "canonicalVolumeLink": "https://play.google.com/store/books/details?id=iWA-DwAAQBAJ"
+  },
+  "layerInfo": {
+    "layers": [
+      {
+        "layerId": "geo",
+        "volumeAnnotationsVersion": "9"
+      }
+    ]
+  },
+  "saleInfo": {
+    "country": "PL",
+    "saleability": "FOR_SALE",
+    "isEbook": true,
+    "listPrice": {
+      "amount": 47.9,
+      "currencyCode": "PLN"
+    },
+    "retailPrice": {
+      "amount": 47.9,
+      "currencyCode": "PLN"
+    },
+    "buyLink": "https://play.google.com/store/books/details?id=iWA-DwAAQBAJ&rdid=book-iWA-DwAAQBAJ&rdot=1&source=gbs_api",
+    "offers": [
+      {
+        "finskyOfferType": 1,
+        "listPrice": {
+          "amountInMicros": 47900000,
+          "currencyCode": "PLN"
+        },
+        "retailPrice": {
+          "amountInMicros": 47900000,
+          "currencyCode": "PLN"
+        }
+      }
+    ]
+  },
+  "accessInfo": {
+    "country": "PL",
+    "viewability": "PARTIAL",
+    "embeddable": true,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+    "epub": {
+      "isAvailable": true,
+      "acsTokenLink": "http://books.google.pl/books/download/The_Great_Gatsby-sample-epub.acsm?id=iWA-DwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+    },
+    "pdf": {
+      "isAvailable": false
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=iWA-DwAAQBAJ&hl=&source=gbs_api",
+    "accessViewStatus": "SAMPLE",
+    "quoteSharingAllowed": false
+  }
+}

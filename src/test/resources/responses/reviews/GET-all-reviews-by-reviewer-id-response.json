@@ -1,0 +1,61 @@
+{
+  "content": [
+    {
+      "id": 1,
+      "bookId": "iWA-DwAAQBAJ",
+      "reviewer": {
+        "id": 1,
+        "firstName": "John",
+        "lastName": "Doe"
+      },
+      "review": "An impressive work of art.",
+      "reviewDate": "2024-03-28T00:00:00Z"
+    },
+    {
+      "id": 5,
+      "bookId": "itHUEAAAQBAJ",
+      "reviewer": {
+        "id": 1,
+        "firstName": "John",
+        "lastName": "Doe"
+      },
+      "review": "I enjoyed this book a lot.",
+      "reviewDate": "2024-05-10T00:00:00Z"
+    }
+  ],
+  "pageable": {
+    "pageNumber": 0,
+    "pageSize": 10,
+    "sort": [
+      {
+        "direction": "ASC",
+        "property": "id",
+        "ignoreCase": false,
+        "nullHandling": "NATIVE",
+        "descending": false,
+        "ascending": true
+      }
+    ],
+    "offset": 0,
+    "unpaged": false,
+    "paged": true
+  },
+  "totalPages": 1,
+  "totalElements": 2,
+  "last": true,
+  "size": 10,
+  "number": 0,
+  "sort": [
+    {
+      "direction": "ASC",
+      "property": "id",
+      "ignoreCase": false,
+      "nullHandling": "NATIVE",
+      "descending": false,
+      "ascending": true
+    }
+  ],
+  "numberOfElements": 2,
+  "first": true,
+  "empty": false
+}
