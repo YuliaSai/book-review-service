@@ -1,0 +1,14 @@
+id,book_id,reviewer_id,review,review_date,created_at,updated_at
+1,iWA-DwAAQBAJ,3,An impressive work of art.,2024-03-28,2024-03-28,2024-03-28
+2,iWA-DwAAQBAJ,5,A must-read.,2024-02-15,2024-02-15,2024-02-15
+3,PGR2AwAAQBAJ,2,Very well written.,2024-01-10,2024-01-10,2024-01-10
+4,PGR2AwAAQBAJ,3,A deep and thoughtful book.,2023-11-19,2023-11-19,2023-11-19
+5,itHUEAAAQBAJ,5,I enjoyed this book a lot.,2024-05-10,2024-05-10,2024-05-10
+6,itHUEAAAQBAJ,3,Not my cup of tea.,2024-03-24,2024-03-24,2024-03-24
+7,itHUEAAAQBAJ,5,A brilliant piece.,2024-09-14,2024-09-14,2024-09-14
+8,5GbdTc9OJ78C,2,Incredible story.,2023-12-03,2023-12-03,2023-12-03
+9,5GbdTc9OJ78C,5,A challenging read but worth it.,2024-04-06,2024-04-06,2024-04-06
+10,5GbdTc9OJ78C,3,One of the best books Iâ€™ve read.,2024-04-22,2024-04-22,2024-04-22
+11,9gT-Sde1pMoC,2,Engaging and thought-provoking.,2024-03-20,2024-03-20,2024-03-20
+12,9gT-Sde1pMoC,2,A remarkable story.,2024-06-09,2024-06-09,2024-06-09
+13,9gT-Sde1pMoC,3,A masterpiece in its genre.,2024-03-11,2024-03-11,2024-03-11

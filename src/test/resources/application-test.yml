@@ -1,0 +1,16 @@
+application:
+  environment:
+    name: test
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  sql:
+    init:
+      mode: always
+
+google:
+  api:
+    host: http://localhost:8181

@@ -1,0 +1,100 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0001_create-users-table
+      author: Yulia Saidak
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: first_name
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: password
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: role
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: 0002_create-reviews-table
+      author: Yulia Saidak
+      changes:
+        - createTable:
+            tableName: reviews
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: book_id
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: reviewer_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: review
+                  type: varchar
+                  constraints:
+                    nullable: true
+              - column:
+                  name: review_date
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: reviews
+            baseColumnNames: reviewer_id
+            constraintName: FK_reviews_users
+            referencedTableName: users
+            referencedColumnNames: id

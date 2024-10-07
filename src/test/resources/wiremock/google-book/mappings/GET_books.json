@@ -1,0 +1,17 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "urlPattern": "/books/v1/volumes\\?q=.*",
+        "method": "GET"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "bodyFileName": "GET_books_ok.json"
+      }
+    }
+  ]
+}

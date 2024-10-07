@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0003_insert-into-users-table
+      author: Yulia Saidak
+      loadData:
+        tableName: users
+        file: data/users-1.0.0.csv
+        relativeToChangelogFile: true
+        commentLineStartsWith: ""
+        usePreparedStatements: true
+        separator: ","
+
+  - changeSet:
+      id: 0004_insert-into-reviews-table
+      author: Yulia Saidak
+      loadData:
+        tableName: reviews
+        file: data/reviews-1.0.1.csv
+        relativeToChangelogFile: true
+        commentLineStartsWith: ""
+        usePreparedStatements: true
+        separator: ","
