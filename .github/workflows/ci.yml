@@ -1,0 +1,33 @@
+name: Java CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    uses: ./.github/workflows/ci-steps.yml
+    with:
+      task: build
+
+  test:
+    uses: ./.github/workflows/ci-steps.yml
+    needs: build
+    with:
+      task: test
+
+  checkstyle:
+    uses: ./.github/workflows/ci-steps.yml
+    needs: build
+    with:
+      task: checkstyleMain checkstyleTest
+
+  coverage:
+    uses: ./.github/workflows/ci-steps.yml
+    needs: test
+    with:
+      task: jacocoTestReport
