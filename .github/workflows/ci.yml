@@ -22,12 +22,12 @@ jobs:
 
   checkstyle:
     uses: ./.github/workflows/ci-steps.yml
-    needs: build
+    needs: test
     with:
       task: checkstyleMain checkstyleTest
 
   coverage:
     uses: ./.github/workflows/ci-steps.yml
-    needs: test
+    needs: checkstyle
     with:
       task: jacocoTestReport
