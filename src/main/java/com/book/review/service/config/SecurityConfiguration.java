@@ -27,6 +27,10 @@ public class SecurityConfiguration {
     private static final String BASE_BOOKS_URL = "/api/v1/books";
     private static final String BASE_REVIEWS_URL = "/api/v1/reviews";
     private static final String BASE_AUTH_URL = "/api/v1/auth";
+    private static final String ACTUATOR_URI = "/actuator/**";
+    private static final String[] SWAGGER_URL = { "/book-review-service/v1/api-docs/**", "/swagger",
+            "/api-docs/**", "/swagger-ui/**", "/swagger-ui.html"
+    };
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -36,6 +40,10 @@ public class SecurityConfiguration {
                         sessionManagementConfigurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorizeRequestsConfigurer ->
                         authorizeRequestsConfigurer
+                                .requestMatchers(ACTUATOR_URI)
+                                .permitAll()
+                                .requestMatchers(SWAGGER_URL)
+                                .permitAll()
                                 .requestMatchers(HttpMethod.GET, BASE_BOOKS_URL, BASE_BOOKS_URL + "/**",
                                         BASE_REVIEWS_URL, BASE_REVIEWS_URL + "/**")
                                 .permitAll()

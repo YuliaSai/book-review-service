@@ -33,9 +33,18 @@ spring:
             readTimeout: 60000
             loggerLevel: basic
 
+springdoc:
+  api-docs:
+    path: /book-review-service/v1/api-docs
+    enabled: true
+  swagger-ui:
+    path: /swagger
+    enabled: true
+  default-produces-media-type: application/json
+
 management:
   server:
-    port: 80
+    port: 8081
   endpoint:
     health:
       show-details: ALWAYS
