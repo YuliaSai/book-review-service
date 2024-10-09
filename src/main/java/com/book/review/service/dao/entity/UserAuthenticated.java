@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.User;
 
 import java.util.Collection;
 
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = true)
 public class UserAuthenticated extends User {
 
     @Getter
