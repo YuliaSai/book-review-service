@@ -9,25 +9,25 @@ on:
       - main
 
 jobs:
-  build:
-    uses: ./.github/workflows/ci-steps.yml
-    with:
-      task: build
-
-  test:
-    uses: ./.github/workflows/ci-steps.yml
-    needs: build
-    with:
-      task: test
-
   checkstyle:
     uses: ./.github/workflows/ci-steps.yml
-    needs: test
     with:
       task: checkstyleMain checkstyleTest
 
-  coverage:
+  test:
     uses: ./.github/workflows/ci-steps.yml
     needs: checkstyle
     with:
+      task: test
+
+  coverage:
+    uses: ./.github/workflows/ci-steps.yml
+    needs: test
+    with:
       task: jacocoTestReport jacocoTestCoverageVerification
+
+  build:
+    uses: ./.github/workflows/ci-steps.yml
+    needs: coverage
+    with:
+      task: build
