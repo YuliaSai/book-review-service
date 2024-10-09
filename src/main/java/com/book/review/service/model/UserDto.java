@@ -6,13 +6,13 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import lombok.Builder;
 
-import static com.book.review.service.util.Constants.EMAIL_PATTERN;
-import static com.book.review.service.util.Constants.NAME_PATTERN;
-import static com.book.review.service.util.Constants.PASSWORD_PATTERN;
-import static com.book.review.service.util.Constants.WRONG_EMAIL_MESSAGE;
-import static com.book.review.service.util.Constants.WRONG_FIRST_NAME_MESSAGE;
-import static com.book.review.service.util.Constants.WRONG_LAST_NAME_MESSAGE;
-import static com.book.review.service.util.Constants.WRONG_PASSWORD_MESSAGE;
+import static com.book.review.service.util.constants.Constants.EMAIL_PATTERN;
+import static com.book.review.service.util.constants.Constants.NAME_PATTERN;
+import static com.book.review.service.util.constants.Constants.PASSWORD_PATTERN;
+import static com.book.review.service.util.constants.Constants.WRONG_EMAIL_MESSAGE;
+import static com.book.review.service.util.constants.Constants.WRONG_FIRST_NAME_MESSAGE;
+import static com.book.review.service.util.constants.Constants.WRONG_LAST_NAME_MESSAGE;
+import static com.book.review.service.util.constants.Constants.WRONG_PASSWORD_MESSAGE;
 
 @Builder(toBuilder = true)
 public record UserDto(

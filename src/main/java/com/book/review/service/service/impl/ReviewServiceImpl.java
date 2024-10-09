@@ -6,7 +6,7 @@ import com.book.review.service.dao.entity.ReviewEntity;
 import com.book.review.service.dao.entity.UserEntity;
 import com.book.review.service.dao.repository.ReviewRepository;
 import com.book.review.service.dao.repository.UserRepository;
-import com.book.review.service.exception.AuthorisationException;
+import com.book.review.service.exception.AuthorizationException;
 import com.book.review.service.exception.BusinessException;
 import com.book.review.service.mapper.ReviewMapper;
 import com.book.review.service.mapper.UserMapper;
@@ -19,13 +19,15 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.time.ZonedDateTime;
+import java.util.List;
+import java.util.Map;
 
-import static com.book.review.service.util.helper.BookTransformer.convertToBookResponseDto;
+import static com.book.review.service.util.BookUtils.convertToBookResponseDto;
+import static com.book.review.service.util.SecurityUtils.getUsername;
+import static java.util.stream.Collectors.groupingBy;
 
 @Slf4j
 @Service
@@ -104,10 +106,25 @@ public class ReviewServiceImpl implements ReviewService {
         log.debug("ActionLog.deleteReview.end -> Delete review for book with id {}", bookId);
     }
 
+    @Override
+    public Map<String, List<ReviewResponseDto>> getReviewsByBookIds(List<String> bookIds) {
+        if (bookIds.isEmpty()) {
+            return Map.of();
+        }
+
+        return reviewRepository.findByBookIds(bookIds)
+                .stream()
+                .map(reviewEntity -> {
+                    final var reviewerDto = userMapper.toReviewDto(reviewEntity.getReviewer());
+                    return reviewMapper.toReviewDto(reviewEntity, reviewerDto);
+                })
+                .collect(groupingBy(ReviewResponseDto::bookId));
+    }
+
     private ReviewEntity getReviewEntity(Long id, String bookId, Long reviewerId) {
         return reviewRepository.getReviewByIdAndBookIdAndReviewerId(id, bookId, reviewerId)
                 .orElseThrow(() -> new BusinessException(HttpStatus.NOT_FOUND,
-                        String.format(BusinessException.NOT_FOUND_REVIEW_BY_ID, id)));
+                        String.format(BusinessException.NOT_FOUND_REVIEW_BY_ID_TEMPLATE, id)));
     }
 
     private Page<ReviewResponseDto> getReviewResponseDtos(Page<ReviewEntity> reviewsEntity) {
@@ -122,25 +139,7 @@ public class ReviewServiceImpl implements ReviewService {
         final var username = getUsername();
 
         return userRepository.findByEmail(username).orElseThrow(() ->
-                new AuthorisationException(HttpStatus.NOT_FOUND,
-                        String.format(AuthorisationException.NOT_FOUND_USER_BY_EMAIL, username)));
-    }
-
-    private String getUsername() {
-        final var authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (authentication == null || authentication.getPrincipal() == null) {
-            throw new AuthorisationException(HttpStatus.UNAUTHORIZED, AuthorisationException.USER_UNAUTHORIZED);
-        }
-        return extractUsername(authentication.getPrincipal());
-    }
-
-    private String extractUsername(Object principal) {
-        if (principal instanceof UserDetails userDetails) {
-            return userDetails.getUsername();
-        } else if (principal instanceof String username) {
-            return username;
-        } else {
-            throw new AuthorisationException(HttpStatus.UNAUTHORIZED, AuthorisationException.USER_UNAUTHORIZED);
-        }
+                new AuthorizationException(HttpStatus.NOT_FOUND,
+                        String.format(AuthorizationException.NOT_FOUND_USER_BY_EMAIL_TEMPLATE, username)));
     }
 }

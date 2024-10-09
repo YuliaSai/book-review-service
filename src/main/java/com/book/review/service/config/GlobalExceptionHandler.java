@@ -1,6 +1,6 @@
 package com.book.review.service.config;
 
-import com.book.review.service.exception.AuthorisationException;
+import com.book.review.service.exception.AuthorizationException;
 import com.book.review.service.exception.BusinessException;
 import com.book.review.service.model.MessageResponseDto;
 import feign.FeignException;
@@ -23,8 +23,8 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(ex.getHttpStatus()).body(new MessageResponseDto(ex.getMessage()));
     }
 
-    @ExceptionHandler(AuthorisationException.class)
-    public ResponseEntity<MessageResponseDto> handleAuthorisationException(AuthorisationException ex) {
+    @ExceptionHandler(AuthorizationException.class)
+    public ResponseEntity<MessageResponseDto> handleAuthorisationException(AuthorizationException ex) {
         log.warn("{ActionLog.handleAuthorisationException} -> {}", ex.getMessage());
 
         return ResponseEntity.status(ex.getHttpStatus()).body(new MessageResponseDto(ex.getMessage()));

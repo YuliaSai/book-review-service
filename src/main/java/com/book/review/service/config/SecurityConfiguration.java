@@ -24,11 +24,12 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @EnableWebSecurity
 public class SecurityConfiguration {
 
+    private static final String ALL_URL = "/**";
     private static final String BASE_BOOKS_URL = "/api/v1/books";
     private static final String BASE_REVIEWS_URL = "/api/v1/reviews";
     private static final String BASE_AUTH_URL = "/api/v1/auth";
-    private static final String ACTUATOR_URI = "/actuator/**";
-    private static final String[] SWAGGER_URL = { "/book-review-service/v1/api-docs/**", "/swagger",
+    private static final String ACTUATOR_URI = "/actuator";
+    private static final String[] SWAGGER_URL = {"/book-review-service/v1/api-docs/**", "/swagger",
             "/api-docs/**", "/swagger-ui/**", "/swagger-ui.html"
     };
 
@@ -40,20 +41,20 @@ public class SecurityConfiguration {
                         sessionManagementConfigurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorizeRequestsConfigurer ->
                         authorizeRequestsConfigurer
-                                .requestMatchers(ACTUATOR_URI)
+                                .requestMatchers(ACTUATOR_URI + ALL_URL)
                                 .permitAll()
                                 .requestMatchers(SWAGGER_URL)
                                 .permitAll()
-                                .requestMatchers(HttpMethod.GET, BASE_BOOKS_URL, BASE_BOOKS_URL + "/**",
-                                        BASE_REVIEWS_URL, BASE_REVIEWS_URL + "/**")
+                                .requestMatchers(HttpMethod.GET, BASE_BOOKS_URL, BASE_BOOKS_URL + ALL_URL,
+                                        BASE_REVIEWS_URL, BASE_REVIEWS_URL + ALL_URL)
                                 .permitAll()
-                                .requestMatchers(HttpMethod.POST, BASE_AUTH_URL + "/**")
+                                .requestMatchers(HttpMethod.POST, BASE_AUTH_URL + ALL_URL)
                                 .permitAll()
                                 .requestMatchers(HttpMethod.POST, BASE_REVIEWS_URL)
                                 .authenticated()
-                                .requestMatchers(HttpMethod.PUT, BASE_REVIEWS_URL + "/**")
+                                .requestMatchers(HttpMethod.PUT, BASE_REVIEWS_URL + ALL_URL)
                                 .authenticated()
-                                .requestMatchers(HttpMethod.DELETE, BASE_REVIEWS_URL + "/**")
+                                .requestMatchers(HttpMethod.DELETE, BASE_REVIEWS_URL + ALL_URL)
                                 .authenticated()
                                 .anyRequest().denyAll())
                 .formLogin(formLoginConfigurer ->

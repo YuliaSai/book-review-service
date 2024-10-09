@@ -2,11 +2,10 @@ package com.book.review.service.service.impl;
 
 import com.book.review.service.dao.entity.UserEntity;
 import com.book.review.service.dao.repository.UserRepository;
-import com.book.review.service.exception.AuthorisationException;
+import com.book.review.service.exception.AuthorizationException;
 import com.book.review.service.mapper.UserMapper;
 import com.book.review.service.mapper.UserMapperImpl;
 import com.book.review.service.model.UserDto;
-import com.book.review.service.service.impl.UserServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -73,9 +72,10 @@ class UserServiceImplTest {
         when(userRepository.findByEmail(email)).thenReturn(Optional.empty());
 
         // when & then
-        final var exception = assertThrows(AuthorisationException.class, () -> userService.findByEmail(email));
+        final var exception = assertThrows(AuthorizationException.class, () -> userService.findByEmail(email));
 
-        assertEquals(String.format(AuthorisationException.NOT_FOUND_USER_BY_EMAIL, email), exception.getMessage());
+        assertEquals(String.format(AuthorizationException.NOT_FOUND_USER_BY_EMAIL_TEMPLATE, email),
+                exception.getMessage());
         verify(userRepository).findByEmail(email);
     }
 
@@ -99,11 +99,11 @@ class UserServiceImplTest {
         when(userRepository.findByEmail(userDto.email())).thenReturn(Optional.of(userEntity));
 
         // when
-        final var exception = assertThrows(AuthorisationException.class, () -> userService.registerUser(userDto));
+        final var exception = assertThrows(AuthorizationException.class, () -> userService.registerUser(userDto));
 
         // then
         assertEquals(HttpStatus.CONFLICT, exception.getHttpStatus());
-        assertEquals(String.format(AuthorisationException.USER_ALREADY_EXISTS, userDto.email()),
+        assertEquals(String.format(AuthorizationException.USER_ALREADY_EXISTS_TEMPLATE, userDto.email()),
                 exception.getMessage());
     }
 }

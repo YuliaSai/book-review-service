@@ -27,19 +27,23 @@ public class BookController {
 
     private final BookService bookService;
 
-    @Operation(summary = "Get a list of books with filtering and pagination",
+    @Operation(
+            summary = "Get a list of books with filtering and pagination",
             description = "Returns a list of books based on the provided filters, with pagination and sorting.")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "List of books retrieved successfully",
+            @ApiResponse(
+                    responseCode = "200", description = "List of books retrieved successfully",
                     content = @Content(
                             mediaType = MediaType.APPLICATION_JSON_VALUE,
                             schema = @Schema(implementation = BookResponseDto.class))),
-            @ApiResponse(responseCode = "400", description = "Invalid request parameters")
+            @ApiResponse(
+                    responseCode = "400", description = "Invalid request parameters")
     })
     @GetMapping
-    public Page<BookResponseDto> getBooksByFilter(@RequestBody RequestFilterDto filters,
-                                                  @RequestParam(defaultValue = "0") int pageNo,
-                                                  @RequestParam(defaultValue = "10") int pageSize) {
+    public Page<BookResponseDto> getBooksByFilter(
+            @RequestBody RequestFilterDto filters,
+            @RequestParam(defaultValue = "0") int pageNo,
+            @RequestParam(defaultValue = "10") int pageSize) {
         final var pageable = PageRequest.of(pageNo, pageSize);
         return bookService.getBooksByFilter(filters, pageable);
     }

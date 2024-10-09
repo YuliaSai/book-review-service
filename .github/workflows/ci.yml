@@ -30,4 +30,4 @@ jobs:
     uses: ./.github/workflows/ci-steps.yml
     needs: checkstyle
     with:
-      task: jacocoTestReport
+      task: jacocoTestReport jacocoTestCoverageVerification

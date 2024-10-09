@@ -37,14 +37,17 @@ public class ReviewController {
 
     private final ReviewService reviewService;
 
-    @Operation(summary = "Retrieve reviews for a book",
+    @Operation(
+            summary = "Retrieve reviews for a book",
             description = "Returns a paginated list of reviews for the specified book.")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Reviews successfully retrieved",
+            @ApiResponse(
+                    responseCode = "200", description = "Reviews successfully retrieved",
                     content = @Content(
                             mediaType = MediaType.APPLICATION_JSON_VALUE,
                             schema = @Schema(implementation = ReviewResponseDto.class))),
-            @ApiResponse(responseCode = "400", description = "Invalid request")
+            @ApiResponse(
+                    responseCode = "400", description = "Invalid request")
     })
     @GetMapping
     Page<ReviewResponseDto> getReviewsByBookId(@RequestParam String bookId,
