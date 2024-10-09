@@ -1,5 +1,8 @@
-package com.book.review.service.util;
+package com.book.review.service.util.constants;
 
+import lombok.experimental.UtilityClass;
+
+@UtilityClass
 public class Constants {
     public static final String NAME_PATTERN = "^(?![- ])(?!.*[- ]$)[a-zA-Z\\s-]{2,30}$";
     public static final String WRONG_FIRST_NAME_MESSAGE = "Invalid characters in first name";

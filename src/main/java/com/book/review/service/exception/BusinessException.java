@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 @Getter
 public class BusinessException extends RuntimeException {
 
-    public static final String NOT_FOUND_REVIEW_BY_ID = "Cannot find the review with id %s";
+    public static final String NOT_FOUND_REVIEW_BY_ID_TEMPLATE = "Cannot find the review with id %s";
 
     private final HttpStatus httpStatus;
 

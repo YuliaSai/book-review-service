@@ -11,14 +11,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface GoogleBooksFeignClient {
 
     @GetMapping
-    GoogleBooksResponseDto getBooksByFilter(@RequestParam("q") String query,
-                                            @RequestParam("startIndex") int startIndex,
-                                            @RequestParam("maxResults") int maxResults,
-                                            @RequestParam(value = "orderBy", defaultValue = "newest") String orderBy,
-                                            @RequestParam("key") String apiKey
+    GoogleBooksResponseDto getBooksByFilter(
+            @RequestParam("q") String query,
+            @RequestParam("startIndex") int startIndex,
+            @RequestParam("maxResults") int maxResults,
+            @RequestParam(value = "orderBy", defaultValue = "newest") String orderBy,
+            @RequestParam("key") String apiKey
     );
 
     @GetMapping("/{volumeId}")
-    GoogleBookItemDto getBookById(@PathVariable("volumeId") String bookId, @RequestParam("key") String apiKey
+    GoogleBookItemDto getBookById(
+            @PathVariable("volumeId") String bookId,
+            @RequestParam("key") String apiKey
     );
 }

@@ -1,11 +1,13 @@
 package com.book.review.service.dao.entity;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
 import java.util.Collection;
 
+@EqualsAndHashCode
 public class UserAuthenticated extends User {
 
     @Getter
@@ -23,6 +25,6 @@ public class UserAuthenticated extends User {
     }
 
     public String getName() {
-        return firstName + " " + lastName;
+        return String.format("%s %s", firstName, lastName);
     }
 }

@@ -14,7 +14,6 @@ import com.book.review.service.mapper.UserMapperImpl;
 import com.book.review.service.model.BookResponseDto;
 import com.book.review.service.model.ReviewRequestDto;
 import com.book.review.service.model.google.GoogleBookItemDto;
-import com.book.review.service.service.impl.ReviewServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -181,6 +180,6 @@ class ReviewServiceImplTest {
                 reviewService.deleteReview(1L, bookResponseDto.id()));
 
         // then
-        assertEquals(String.format(BusinessException.NOT_FOUND_REVIEW_BY_ID, 1L), exception.getMessage());
+        assertEquals(String.format(BusinessException.NOT_FOUND_REVIEW_BY_ID_TEMPLATE, 1L), exception.getMessage());
     }
 }

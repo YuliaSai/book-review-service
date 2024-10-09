@@ -1,12 +1,14 @@
-package com.book.review.service.util.helper;
+package com.book.review.service.util;
 
 import com.book.review.service.model.BookResponseDto;
 import com.book.review.service.model.RequestFilterDto;
 import com.book.review.service.model.google.GoogleBookItemDto;
 import com.book.review.service.model.google.GoogleIndustryIdentifierDto;
 import com.book.review.service.model.google.GoogleVolumeInfoDto;
+import lombok.experimental.UtilityClass;
 
-public class BookTransformer {
+@UtilityClass
+public class BookUtils {
 
     public static String buildQuery(RequestFilterDto filterDto) {
         final var query = new StringBuilder();
@@ -43,7 +45,7 @@ public class BookTransformer {
                 .build();
     }
 
-    private static String getIsbn(GoogleVolumeInfoDto volumeInfo) {
+    public static String getIsbn(GoogleVolumeInfoDto volumeInfo) {
         return volumeInfo.getIndustryIdentifiers().stream()
                 .filter(industryIdentifier -> "ISBN_13".equals(industryIdentifier.getType()))
                 .findFirst()

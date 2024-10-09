@@ -90,7 +90,7 @@ jacocoTestReport {
         classDirectories.setFrom(
                 files(classDirectories.files.collect {
                     fileTree(dir: it, exclude: [
-                            'com/book/review/service/dao/entity/**',
+                            'com/book/review/service/dao/**',
                             'com/book/review/service/model/**',
                             'com/book/review/service/config/**',
                             'com/book/review/service/interceptor/**',
@@ -101,4 +101,14 @@ jacocoTestReport {
     }
 }
 
-check.dependsOn jacocoTestReport
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.85
+            }
+        }
+    }
+}
+
+check.dependsOn jacocoTestReport, jacocoTestCoverageVerification
