@@ -49,8 +49,8 @@ public class ReviewController {
             @ApiResponse(
                     responseCode = "400", description = "Invalid request")
     })
-    @GetMapping
-    Page<ReviewResponseDto> getReviewsByBookId(@RequestParam String bookId,
+    @GetMapping("/books/{bookId}/reviews")
+    Page<ReviewResponseDto> getReviewsByBookId(@PathVariable String bookId,
                                                @RequestParam(defaultValue = "0") int pageNo,
                                                @RequestParam(defaultValue = "10") int pageSize,
                                                @RequestParam(defaultValue = "id") String sortBy) {
