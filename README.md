@@ -90,10 +90,10 @@ http://localhost:8081/swagger
 
 ### Get all books
 **Description**: Returns a list of books.
-  ```http
-GET {{host}}/api/v1/books?title={title}&author={author}&isbn={isbn}
+```http request
+GET http://book-review-service.eu-central-1.elasticbeanstalk.com/api/v1/books?title={title}&author={author}&isbn={isbn}
 Accept: application/json
-  ```
+```
 _**Query Parameters**_:
 - `title` (optional): filter by book title.
 - `author` (optional): filter by author.  
@@ -102,49 +102,49 @@ _**Query Parameters**_:
 
   **Example Request**:
 ```
-GET http://localhost:8081/api/v1/books?title=Java&author=John&isbn=9781471173943
+GET http://book-review-service.eu-central-1.elasticbeanstalk.com/api/v1/books?title=Java&author=John&isbn=9781471173943
 ```
 
 ### Get book by id
 **Description**: Returns a book by its id.
-  ```http
-GET {{host}}/api/v1/books/{id}
+  ```http request
+GET http://book-review-service.eu-central-1.elasticbeanstalk.com/api/v1/books/{{id}}
 Accept: application/json
-   ```
+  ```
 **Example Request**:
 ```
-GET http://localhost:8081/api/v1/books/_ojXNuzgHRcC
+GET http://book-review-service.eu-central-1.elasticbeanstalk.com/api/v1/books/_ojXNuzgHRcC
 ```
 
 ### Get reviews for a book by book id
 **Description**: Returns a list of reviews for the specified book.
-  ```http
-GET {{host}}/api/v1/reviews/books/{bookId}/reviews
+  ```http request
+GET http://book-review-service.eu-central-1.elasticbeanstalk.com/api/v1/reviews/books/{{bookId}}/reviews
 Accept: application/json
-   ```
+  ```
 **Example Request**:
 ```
-GET http://localhost:8081/api/v1/reviews/books/_ojXNuzgHRcC/reviews
+GET http://book-review-service.eu-central-1.elasticbeanstalk.com/api/v1/reviews/books/_ojXNuzgHRcC/reviews
 ```
 
 ### Get reviews for a book by reviewer id
 **Description**: Returns a list of reviews for the specified reviewer.
-  ```http
-GET {{host}}/api/v1/reviewers/{reviewerId}/reviews
+  ```http request
+GET http://book-review-service.eu-central-1.elasticbeanstalk.com/api/v1/reviewers/{{reviewerId}}/reviews
 Accept: application/json
-   ```
+  ```
 **Example Request**:
 ```
-GET http://localhost:8081/api/v1/reviews?reviewerId=123/reviews
+GET http://book-review-service.eu-central-1.elasticbeanstalk.com/api/v1/reviews?reviewerId=123/reviews
 ```
 
 ### Add a Review for a Book
 **Description**: Adds a new review for a book.  
-  ```http
-POST {{host}}/api/v1/reviews
-Authorization: Bearer {{jwt}}
+  ```http request
+POST http://book-review-service.eu-central-1.elasticbeanstalk.com/api/v1/reviews
+Authorization: Bearer JWT_TOKEN_PLACEHOLDER
 Accept: application/json
-   ```
+  ```
 _**Request Body**_:
 ```json
 {
@@ -154,8 +154,8 @@ _**Request Body**_:
 ```
 **Example Request**:
 ```
-POST http://localhost:8081/api/v1/reviews
-Authorization: Bearer {{jwt}}
+POST http://book-review-service.eu-central-1.elasticbeanstalk.com/api/v1/reviews
+Authorization: Bearer JWT_TOKEN_PLACEHOLDER
 Content-Type: application/json
 {
   "bookId": "12345",
@@ -165,11 +165,11 @@ Content-Type: application/json
 
 ### Update a Review
 **Description**: Updates an existing review by its ID.
-  ```http
-PUT {{host}}/api/v1/reviews/{id}
-Authorization: Bearer {{jwt}}
+  ```http request
+PUT http://book-review-service.eu-central-1.elasticbeanstalk.com/api/v1/reviews/{{id}}
+Authorization: Bearer JWT_TOKEN_PLACEHOLDER
 Accept: application/json
-   ```
+  ```
 _**Request Body**_:
 ```json
 {
@@ -179,7 +179,8 @@ _**Request Body**_:
 ```
 **Example Request**:
 ```
-PUT http://localhost:8081/api/v1/reviews/67
+PUT http://book-review-service.eu-central-1.elasticbeanstalk.com/api/v1/reviews/67
+Authorization: Bearer JWT_TOKEN_PLACEHOLDER
 Content-Type: application/json
 {
   "bookId": "iWA-DwAAQBAJ",
@@ -189,12 +190,13 @@ Content-Type: application/json
 
 ### Delete a Review
 **Description**: Deletes a review by its ID.  
-  ```http
-DELETE {{host}}/api/v1/reviews/{id}?bookId={bookId}
-Authorization: Bearer {{jwt}}
+  ```http request
+DELETE http://book-review-service.eu-central-1.elasticbeanstalk.com/api/v1/reviews/{{id}}?bookId={bookId}
+Authorization: Bearer JWT_TOKEN_PLACEHOLDER
 Accept: application/json
-```
+  ```
 **Example Request**:
 ```
-DELETE http://localhost:8081/api/v1/reviews/67?bookId=iWA-DwAAQBAJ
+DELETE http://book-review-service.eu-central-1.elasticbeanstalk.com/api/v1/reviews/67?bookId=iWA-DwAAQBAJ
+Authorization: Bearer JWT_TOKEN_PLACEHOLDER
 ```
