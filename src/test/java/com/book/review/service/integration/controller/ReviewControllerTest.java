@@ -24,7 +24,7 @@ class ReviewControllerTest extends AbstractIntegrationTest {
 
         // when
         final var result = mockMvc.perform(get(BASE_REVIEWS_URL +
-                "?bookId=iWA-DwAAQBAJ&page=0&size=10")
+                "/books/iWA-DwAAQBAJ/reviews?page=0&size=10")
                 .contentType(MediaType.APPLICATION_JSON)).andReturn();
 
         // then

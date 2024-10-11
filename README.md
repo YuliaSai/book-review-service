@@ -119,12 +119,12 @@ GET http://localhost:8081/api/v1/books/_ojXNuzgHRcC
 ### Get reviews for a book by book id
 **Description**: Returns a list of reviews for the specified book.
   ```http
-GET {{host}}/api/v1/reviews?bookId={bookId}
+GET {{host}}/api/v1/reviews/books/{bookId}/reviews
 Accept: application/json
    ```
 **Example Request**:
 ```
-GET http://localhost:8081/api/v1/reviews?bookId=_ojXNuzgHRcC
+GET http://localhost:8081/api/v1/reviews/books/_ojXNuzgHRcC/reviews
 ```
 
 ### Get reviews for a book by reviewer id
