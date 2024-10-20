@@ -18,24 +18,24 @@ import static com.book.review.service.util.constants.Constants.WRONG_PASSWORD_ME
 public record UserDto(
         Long id,
 
+        @Schema(example = "Grzegorz")
         @NotBlank(message = "First name cannot be blank or null")
         @Pattern(regexp = NAME_PATTERN, message = WRONG_FIRST_NAME_MESSAGE)
-        @Schema(example = "Grzegorz")
         String firstName,
 
+        @Schema(example = "Bzeczyszczykiewicz")
         @NotBlank(message = "Last name cannot be blank or null")
         @Pattern(regexp = NAME_PATTERN, message = WRONG_LAST_NAME_MESSAGE)
-        @Schema(example = "Bzeczyszczykiewicz")
         String lastName,
 
+        @Schema(example = "username@domain.com")
         @NotBlank(message = "Email cannot be blank or null")
         @Pattern(regexp = EMAIL_PATTERN, message = WRONG_EMAIL_MESSAGE)
-        @Schema(example = "username@domain.com")
         String email,
 
+        @Schema(example = "Password1_")
         @NotBlank(message = "Password cannot be blank or null")
         @Pattern(regexp = PASSWORD_PATTERN, message = WRONG_PASSWORD_MESSAGE)
-        @Schema(example = "Password1_")
         String password,
 
         Role role

@@ -5,9 +5,13 @@ import lombok.Builder;
 
 @Builder(toBuilder = true)
 public record RequestFilterDto(
-        @Schema(example = "_ojXNuzgHRcC") String id,
-        @Schema(example = "The Great Gatsby") String title,
-        @Schema(example = "F. Scott Fitzgerald") String author,
-        @Schema(example = "9780451524935") String isbn
+        @Schema(description = "Unique identifier of the book", example = "_ojXNuzgHRcC")
+        String id,
+        @Schema(description = "Title of the book", example = "The Great Gatsby")
+        String title,
+        @Schema(description = "Author of the book", example = "F. Scott Fitzgerald")
+        String author,
+        @Schema(description = "ISBN number of the book", example = "9780451524935")
+        String isbn
 ) {
 }
