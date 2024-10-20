@@ -1,4 +1,8 @@
 package com.book.review.service.model;
 
-public record MessageResponseDto(String message) {
+import io.swagger.v3.oas.annotations.media.Schema;
+
+public record MessageResponseDto(
+        @Schema(example = "Response message")
+        String message) {
 }

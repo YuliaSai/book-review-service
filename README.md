@@ -23,7 +23,7 @@ public IP address (http://18.195.223.8)
 or  
 domain name(http://book-review-service.eu-central-1.elasticbeanstalk.com).
 
-**Swagger UI:** http://18.195.223.8/swagger-ui/index.html
+**Swagger UI:** http://18.195.223.8/swagger-ui/index.html  
 **Actuator Health Check:** http://18.195.223.8/actuator/health
 
 ## System Requirements

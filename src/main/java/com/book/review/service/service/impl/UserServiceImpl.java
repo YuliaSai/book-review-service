@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
                     String.format(AuthorizationException.USER_ALREADY_EXISTS_TEMPLATE, userRegistrationDto.email()));
         }
 
-        var newUser = userRegistrationDto.toBuilder()
+        final var newUser = userRegistrationDto.toBuilder()
                 .role(Role.REVIEWER)
                 .password(passwordEncoder.encode(userRegistrationDto.password()))
                 .build();
